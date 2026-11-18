@@ -1,0 +1,285 @@
+:root {
+  --bg-color: #0d1526;
+  --bg-gradient: radial-gradient(circle at 50% 0%, #172544 0%, #0d1526 70%);
+  --card-bg: #162238;
+  --item-bg: #111b2e;
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --accent-color: #60a5fa;
+  --accent-soft: rgba(96, 165, 250, 0.14);
+  --border-color: rgba(148, 163, 184, 0.16);
+  --border-hover: rgba(96, 165, 250, 0.4);
+  --radius-lg: 16px;
+  --radius-md: 12px;
+  --shadow-sm: 0 4px 12px rgba(2, 6, 23, 0.25);
+  --shadow-md: 0 12px 28px -6px rgba(2, 6, 23, 0.45);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+  background-color: var(--bg-color);
+  background-image: var(--bg-gradient);
+  background-attachment: fixed;
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  padding: 3rem 1.25rem;
+}
+
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+/* 프로필 헤더 */
+.profile-header {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  box-shadow: var(--shadow-md);
+}
+
+.avatar {
+  width: 82px;
+  height: 82px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: #ffffff;
+  font-size: 1.35rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  letter-spacing: -0.02em;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+  border: 2px solid rgba(147, 197, 253, 0.3);
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.badge {
+  display: inline-block;
+  align-self: flex-start;
+  background-color: var(--accent-soft);
+  color: var(--accent-color);
+  border: 1px solid rgba(96, 165, 250, 0.25);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+}
+
+.profile-info h1 {
+  font-size: 1.65rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.profile-info h1 strong {
+  color: var(--accent-color);
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  font-size: 0.975rem;
+}
+
+/* 공통 섹션 스타일 */
+.section {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.85rem 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.section-title::before {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 16px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+}
+
+/* 기본 정보 리스트 */
+.info-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.info-item {
+  background-color: var(--item-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.info-label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.info-value {
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* 취미 그리드 */
+.hobby-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.15rem;
+}
+
+.hobby-card {
+  background-color: var(--item-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.4rem 1.3rem;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.hobby-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-hover);
+}
+
+.hobby-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.hobby-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* 취미별 아이콘 테마 컬러 */
+.icon-book {
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(59, 130, 246, 0.12));
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.12);
+}
+
+.icon-photo {
+  background: linear-gradient(135deg, rgba(167, 139, 250, 0.2), rgba(139, 92, 246, 0.12));
+  color: #c084fc;
+  border: 1px solid rgba(192, 132, 252, 0.3);
+  box-shadow: 0 4px 12px rgba(192, 132, 252, 0.12);
+}
+
+.icon-movie {
+  background: linear-gradient(135deg, rgba(251, 146, 60, 0.2), rgba(244, 63, 94, 0.12));
+  color: #fb923c;
+  border: 1px solid rgba(251, 146, 60, 0.3);
+  box-shadow: 0 4px 12px rgba(251, 146, 60, 0.12);
+}
+
+.hobby-card h3 {
+  font-size: 1.08rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.hobby-card p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+/* 푸터 */
+.footer {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  padding: 0.5rem 0;
+}
+
+/* 반응형 미디어 쿼리 (태블릿 & 모바일 화면) */
+@media (max-width: 720px) {
+  .hobby-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: 1.5rem 1rem;
+  }
+
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.75rem 1.25rem;
+    gap: 1.15rem;
+  }
+
+  .badge {
+    align-self: center;
+  }
+
+  .profile-info h1 {
+    font-size: 1.4rem;
+  }
+
+  .section {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .info-list {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .info-item {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
